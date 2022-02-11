@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Linq;
 
 namespace MyApp
 {
     class ArrayClass
     {
-        static void Main(string[] args)
+        static void Array_exe(string[] args)
         {
             string[] cars ;
             cars = new string[] {"Volvo", "BMW", "Ford", "Mazda"};
