@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 
 namespace MyApp
 {
     class StringS
     {
-        static void Main(string[] args)
+        static void Strings_exe(string[] args)
         {
             string greet = "Hello ";
             string name = "Sazid";
