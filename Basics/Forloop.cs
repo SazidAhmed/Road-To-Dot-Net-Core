@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 
 namespace MyApp
 {
-    class WhileLoop
+    class ForLoop
     {
-        static void Main(string[] args)
+        static void ForLoop_exe(string[] args)
         {
             for (int i = 0; i <= 10; i = i + 2) {
                 Console.WriteLine(i);
