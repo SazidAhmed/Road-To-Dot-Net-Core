@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 
 namespace MyApp
 {
     class Bools
     {
-        static void Main(string[] args)
+        static void Bools_exe(string[] args)
         {
             bool programmer = true;
             bool doctor = false;
