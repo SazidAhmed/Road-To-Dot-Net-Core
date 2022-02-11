@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 
 namespace MyApp
 {
     class Switchs
     {
-        static void Main(string[] args)
+        static void Switch_exe(string[] args)
         {
             string paymentMethod = "ada";
 
