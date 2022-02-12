@@ -3,40 +3,37 @@ using System.Linq;
 
 namespace MyApp
 {
-    class ArrayClass
+    class MethodClass
     {
+        static void MySelf(string fname, int age) 
+        {
+            Console.WriteLine("I am " + fname + " and I am " + age);
+        }
+
+        static int Sum(int x, int y) 
+        {
+            return x + y;
+        }
+
+        //Method overloading
+        static double Sum(double x, double y) 
+        {
+            return x + y;
+        }
+
+        static float Sum(float x, float y) 
+        {
+            return x + y;
+        }
+
         static void Main(string[] args)
         {
-            string[] cars ;
-            cars = new string[] {"Volvo", "BMW", "Ford", "Mazda"};
-            Array.Sort(cars);
-            Console.WriteLine("Count is : " + cars.Length);
+            MySelf("Sazid", 28);
+            int z = Sum(x:5, y:10);
+            Console.WriteLine(z);
 
-            foreach (string i in cars) 
-            {
-                Console.WriteLine(i);
-            }
-
-            int[] num = {10, 50, 20, 40, 30};
-            Array.Sort(num);
-            Console.WriteLine("Max is : " + num.Max());
-            Console.WriteLine("Min is : " + num.Min());
-            Console.WriteLine("Sum is : " + num.Sum()); 
-
-            // foreach (int y in num) 
-            // {
-            //     Console.WriteLine(y);
-            // }
-
-            for (int y = 0; y < num.Length; y++) 
-            {
-                if(num[y] == 30){
-                    num[y] = 35;
-                    Console.WriteLine(num[y]);
-                }else{
-                    Console.WriteLine(num[y]);
-                }
-            }
+            Console.WriteLine(Sum(x:5.21, y:10.55));
+            Console.WriteLine(Sum(x:5.2, y:10.5));
         }
     }
 }
