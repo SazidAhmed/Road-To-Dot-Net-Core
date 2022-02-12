@@ -26,7 +26,7 @@ namespace MyApp
             return x + y;
         }
 
-        static void Main(string[] args)
+        static void Main_exe(string[] args)
         {
             MySelf("Sazid", 28);
             int z = Sum(x:5, y:10);
