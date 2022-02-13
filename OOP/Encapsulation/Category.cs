@@ -1,6 +1,6 @@
 using System;
 
-namespace Item
+namespace Category
 {
   class Category
   {

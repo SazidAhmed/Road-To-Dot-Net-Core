@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Item
+namespace Category
 {
   class Program
   {
-    static void Main(string[] args)
+    static void Main_exe(string[] args)
     {
       Category instruments = new Category();
       instruments.N = "Guitar";
