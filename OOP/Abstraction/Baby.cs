@@ -5,7 +5,7 @@ namespace Human
   class Baby : Human
   {
     public override void eat(){
-        Console.WriteLine("Eats milk");
+      Console.WriteLine("Eats milk");
     }
   }
 }

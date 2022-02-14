@@ -2,7 +2,7 @@
 
 namespace Vehicle
 {
-  class Prog
+  class Inherit
   {
     static void Main_exe(string[] args)
     {

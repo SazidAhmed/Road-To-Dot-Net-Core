@@ -1,8 +1,7 @@
-using System;
 
 namespace Category
 {
-  class Category
+  class Guitar
   {
     private string name;
 

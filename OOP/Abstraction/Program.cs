@@ -1,11 +1,11 @@
 ﻿
 namespace Human
 {
-  class Progra
+  class Abstr
   {
     static void Main_exe(string[] args)
     {
-      Human myBaby = new Baby();
+      Baby myBaby = new Baby();
       myBaby.walk();
       myBaby.eat();
     }

@@ -1,13 +1,12 @@
-﻿using System;
-
+﻿
 namespace Animal
 {
-  class Prog
+  class Polymorp
   {
     static void Main_exe(string[] args)
     {
-      Animal myCat = new Cat();
-      Animal myDog = new Dog();
+      Cat myCat = new Cat();
+      Dog myDog = new Dog();
 
       myCat.animalSound();
       myDog.animalSound();

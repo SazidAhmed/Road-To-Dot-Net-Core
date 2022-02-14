@@ -2,9 +2,9 @@
 
 namespace Category
 {
-  class Program
+  class Props
   {
-    static void Main(string[] args)
+    static void Main_exe(string[] args)
     {
       Guitar myGuitar = new Guitar();
       myGuitar.N = "Guitar";
