@@ -2,9 +2,9 @@
 
 namespace Vehicle
 {
-  class Program
+  class Prog
   {
-    static void Main(string[] args)
+    static void Main_exe(string[] args)
     {
       Car myCar = new Car();
       myCar.Speed();
