@@ -1,9 +1,9 @@
 ﻿
 namespace Instruments
 {
-  class Program
+  class Instruments
   {
-    static void Main(string[] args)
+    static void Main_exe(string[] args)
     {
       Ibanez myGuitar = new Ibanez();
       myGuitar.brand();
