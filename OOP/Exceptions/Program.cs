@@ -1,9 +1,9 @@
 ﻿
 namespace CustomExceptions
 {
-  class Program
+  class CustomException
   {
-    static void Main(string[] args)
+    static void Main_exe(string[] args)
     {
       CustomExceptions.checkNumber(20);
       CustomExceptions.checkAge(20);
