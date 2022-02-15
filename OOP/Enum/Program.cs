@@ -2,9 +2,9 @@
 
 namespace GuitarStrings
 {
-  class Program
+  class Enums
   {
-    static void Main(string[] args)
+    static void Main_exe(string[] args)
     {
       Strings myGuitarStrings = Strings.Six;
       
