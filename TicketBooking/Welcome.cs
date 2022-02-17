@@ -2,11 +2,14 @@ using System;
 
 namespace TicketBooking{
     public class Welcome{
-        public static void welcome(string conferenceName, int totalTickets, int availableTickets) {
+        public static void welcome() {
 
-            Console.WriteLine("Welcome to " + conferenceName + " booking application");
-            Console.WriteLine("Total Tickets : " + totalTickets);
-            Console.WriteLine("Available Tickets : " + availableTickets);
+            Console.WriteLine("Welcome to ticket booking application");
+            Console.WriteLine("=======================");
+            Console.WriteLine("Press 1 : to view total number of tickets.");
+            Console.WriteLine("Press 2 : to check available tickets.");
+            Console.WriteLine("Press 3 : to book tickets.");
+            Console.WriteLine("=======================");
         }
     }
 }

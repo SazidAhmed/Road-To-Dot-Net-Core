@@ -5,6 +5,9 @@ namespace TicketBooking
 {
   class BookTicket
   {
+      const int totalTickets = 10;
+      public static int availableTickets = 10;
+
     public static void displayBookings (List<string> bookings, int availableTickets){
         Console.WriteLine("=======================");
         Console.WriteLine("Available Tickets : " + availableTickets);
@@ -15,16 +18,29 @@ namespace TicketBooking
         }
         Console.WriteLine("=======================");
     }
-    
-    public static void bookTicket()
+
+    public static void selectedInputs(){
+        
+        string selectedOption = Console.ReadLine();
+
+        switch (selectedOption){
+            case "1":
+                Console.WriteLine("Total Tickets : " + totalTickets);
+                break;
+
+            case "2":
+                Console.WriteLine("Available Tickets : " + availableTickets);
+                break;
+
+            case "3":
+                bookTicket(availableTickets);
+                break;
+        }
+    }
+
+    public static void bookTicket(int availableTickets)
     {
-      const string conferenceName = "Techminate Conference";
-      const int totalTickets = 10;
-      int availableTickets = 10;
-
       List<string> bookings = new List<string>();
-
-      Welcome.welcome(conferenceName, totalTickets, availableTickets);
 
       if(availableTickets <= 0){
         Console.WriteLine("All tickets are sold out!");
@@ -37,24 +53,7 @@ namespace TicketBooking
             
             if(userTicket > availableTickets){
                 Console.WriteLine("Only " + availableTickets + " tickets available");
-                Console.WriteLine("=======================");
-                Console.WriteLine("Enter 1 to book the avaialable tickets.");
-                Console.WriteLine("Enter 2 to exit.");
-                Console.WriteLine("=======================");
-                string selectedOption = Console.ReadLine();
-
-                switch (selectedOption){
-                    case "1":
-                        var info = UserInfo.usInfo();
-                        bookings.Add(info.Item1);
-                        availableTickets = availableTickets - userTicket;
-                        Console.WriteLine("Thank you "+ info.Item1 + " for booking "+ userTickets + " tickets. You will recieve a confirmation email at " + info.Item2);
-                        break;
-
-                    case "2":
-                    Console.WriteLine("See you on the next time.");
-                    break;
-                }
+                continue;
             }else{
                 var info = UserInfo.usInfo();
                 bookings.Add(info.Item1);
