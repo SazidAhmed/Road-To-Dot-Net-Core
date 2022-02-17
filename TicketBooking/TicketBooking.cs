@@ -5,10 +5,17 @@ namespace TicketBooking
 {
   class BookTicket
   {
-
-    public static void userInputs (){
-        //
+    public static void displayBookings (List<string> bookings, int availableTickets){
+        Console.WriteLine("=======================");
+        Console.WriteLine("Available Tickets : " + availableTickets);
+        Console.WriteLine("Registered Names are : ");
+        Console.WriteLine("=======================");
+        foreach(string name in bookings){
+            Console.WriteLine(name);
+        }
+        Console.WriteLine("=======================");
     }
+    
     public static void bookTicket()
     {
       const string conferenceName = "Techminate Conference";
@@ -17,9 +24,7 @@ namespace TicketBooking
 
       List<string> bookings = new List<string>();
 
-      Console.WriteLine("Welcome to " + conferenceName + " booking application");
-      Console.WriteLine("Total Tickets : " + totalTickets);
-      Console.WriteLine("Available Tickets : " + availableTickets);
+      Welcome.welcome(conferenceName, totalTickets, availableTickets);
 
       if(availableTickets <= 0){
         Console.WriteLine("All tickets are sold out!");
@@ -58,14 +63,7 @@ namespace TicketBooking
             }
 
             if(bookings.Count > 0){
-                Console.WriteLine("=======================");
-                Console.WriteLine("Available Tickets : " + availableTickets);
-                Console.WriteLine("Registered Names are : ");
-                Console.WriteLine("=======================");
-                foreach(string name in bookings){
-                    Console.WriteLine(name);
-                }
-                Console.WriteLine("=======================");
+                displayBookings(bookings, availableTickets);
             }
         }while(i < availableTickets);
       }

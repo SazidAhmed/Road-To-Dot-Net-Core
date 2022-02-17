@@ -6,7 +6,6 @@ namespace TicketBooking
     static void Main(string[] args)
     {
       BookTicket.bookTicket();
-
     }
   }
 }
