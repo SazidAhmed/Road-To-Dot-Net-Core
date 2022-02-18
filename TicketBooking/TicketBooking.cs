@@ -35,6 +35,10 @@ namespace TicketBooking
             case "3":
                 bookTicket(availableTickets);
                 break;
+
+            case "4":
+                Console.WriteLine("See you soon.");
+                break;
         }
     }
 
