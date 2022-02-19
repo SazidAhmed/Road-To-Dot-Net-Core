@@ -5,14 +5,28 @@ namespace TicketBooking
 {
   class BookTicket
   {
-      const int totalTickets = 10;
-      public static int availableTickets = 10;
+    const int totalTickets = 10;
+    public static int availableTickets = 10;
 
-    public static void displayBookings (List<string> bookings, int availableTickets){
+    public static void mainMenu(){
+        Console.WriteLine("Press 1 : to view total number of tickets.");
+        Console.WriteLine("Press 2 : to check available tickets.");
+        Console.WriteLine("Press 3 : to book tickets.");
+        Console.WriteLine("Press 4 : to exit.");
         Console.WriteLine("=======================");
-        Console.WriteLine("Available Tickets : " + availableTickets);
-        Console.WriteLine("Registered Names are : ");
+    }
+
+    public static string subMenu(){
+        Console.WriteLine("Press 1 : to book tickets again");
+        Console.WriteLine("Press 0 : back to main menu");
         Console.WriteLine("=======================");
+        string selectedOption = Console.ReadLine();
+        
+        return selectedOption;
+    }
+
+    public static void displayBookings (List<string> bookings){
+       
         foreach(string name in bookings){
             Console.WriteLine(name);
         }
@@ -39,31 +53,44 @@ namespace TicketBooking
         }
     }
 
-    public static void bookingsTicket(){
-        Console.WriteLine("How many tickets do you want to book ? : ");
-        string userTickets = Console.ReadLine();
-        int userTicket = Convert.ToInt32(userTickets);
-        if(userTicket > availableTickets){
-            Console.WriteLine("Only " + availableTickets + " tickets available");
-        }else{
-            var info = UserInfo.usInfo();
-            bookings.Add(info.Item1);
-            availableTickets = availableTickets - userTicket;
-            Console.WriteLine("Thank you "+ info.Item1 + " for booking "+ userTickets + " tickets. You will recieve a confirmation email at " + info.Item2);
-        }
-    }
-
     public static void bookTicket(int availableTickets)
     {
       List<string> bookings = new List<string>();
 
       if(availableTickets <= 0){
         Console.WriteLine("All tickets are sold out!");
+        mainMenu();
+        selectedInputs();
       }else{
-        bookingsTicket();
+        Console.WriteLine("How many tickets do you want to book ? : ");
+        string userTickets = Console.ReadLine();
+        int userTicket = Convert.ToInt32(userTickets);
+        if(userTicket > availableTickets){
+            Console.WriteLine("Only " + availableTickets + " tickets available");
+            bookTicket(availableTickets);
+        }else{
+            var info = UserInfo.usInfo();
+            bookings.Add(info.Item1);
+            availableTickets = availableTickets - userTicket;
+            Console.WriteLine("=======================");
+            Console.WriteLine("Thank you "+ info.Item1 + " for booking "+ userTickets + " tickets. You will recieve a confirmation email at " + info.Item2);
+            Console.WriteLine("=======================");
+            
+            string selectedOption = subMenu();
+            if(selectedOption == "1"){
+                bookTicket(availableTickets);
+            }else if(selectedOption == "0"){
+                mainMenu();
+                selectedInputs();
+            }
 
+        }
         if(bookings.Count > 0){
-            displayBookings(bookings, availableTickets);
+            Console.WriteLine("=======================");
+            Console.WriteLine("Available Tickets : " + availableTickets);
+            Console.WriteLine("Registered Names are : ");
+            Console.WriteLine("=======================");
+            displayBookings(bookings);
         }
       }
     }

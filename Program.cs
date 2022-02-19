@@ -6,6 +6,7 @@ namespace TicketBooking
     static void Main(string[] args)
     {
       Welcome.welcome();
+      BookTicket.mainMenu();
       BookTicket.selectedInputs();
     }
   }
