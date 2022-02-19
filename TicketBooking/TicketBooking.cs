@@ -9,6 +9,7 @@ namespace TicketBooking
     public static int availableTickets = 10;
 
     public static void mainMenu(){
+        Console.WriteLine("========== Main Menu ==========");
         Console.WriteLine("Press 1 : to view total number of tickets.");
         Console.WriteLine("Press 2 : to check available tickets.");
         Console.WriteLine("Press 3 : to book tickets.");
@@ -21,7 +22,7 @@ namespace TicketBooking
         Console.WriteLine("Press 0 : back to main menu");
         Console.WriteLine("=======================");
         string selectedOption = Console.ReadLine();
-        
+    
         return selectedOption;
     }
 
@@ -62,7 +63,7 @@ namespace TicketBooking
         mainMenu();
         selectedInputs();
       }else{
-        Console.WriteLine("How many tickets do you want to book ? : ");
+        Console.WriteLine("How many tickets do you want to book ? ");
         string userTickets = Console.ReadLine();
         int userTicket = Convert.ToInt32(userTickets);
         if(userTicket > availableTickets){
