@@ -8,6 +8,8 @@ namespace TicketBooking
     const int totalTickets = 10;
     public static int availableTickets = 10;
 
+    public static List<string> bookings = new List<string>();
+
     public static void mainMenu(){
         Console.WriteLine("========== Main Menu ==========");
         Console.WriteLine("Press 1 : to view total number of tickets.");
@@ -56,7 +58,7 @@ namespace TicketBooking
 
     public static void bookTicket(int availableTickets)
     {
-      List<string> bookings = new List<string>();
+      
 
       if(availableTickets <= 0){
         Console.WriteLine("All tickets are sold out!");
@@ -81,17 +83,17 @@ namespace TicketBooking
             if(selectedOption == "1"){
                 bookTicket(availableTickets);
             }else if(selectedOption == "0"){
+                if(bookings.Count > 0){
+                    Console.WriteLine("=======================");
+                    Console.WriteLine("Available Tickets : " + availableTickets);
+                    Console.WriteLine("Registered Names are : ");
+                    Console.WriteLine("=======================");
+                    displayBookings(bookings);
+                }
                 mainMenu();
                 selectedInputs();
             }
 
-        }
-        if(bookings.Count > 0){
-            Console.WriteLine("=======================");
-            Console.WriteLine("Available Tickets : " + availableTickets);
-            Console.WriteLine("Registered Names are : ");
-            Console.WriteLine("=======================");
-            displayBookings(bookings);
         }
       }
     }
