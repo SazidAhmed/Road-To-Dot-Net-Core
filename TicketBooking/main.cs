@@ -1,7 +1,7 @@
 
 namespace TicketBooking
 {
-  class Program
+  class Main
   {
     static void Main_main(string[] args)
     {
